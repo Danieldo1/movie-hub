@@ -20,7 +20,6 @@ const Sidebar = () => {
 
     useEffect(() => {
         axios.get(`${BASE_URL}/genre/movie/list?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US`).then(({data})=>{
-            console.log(data.genres)
             setGenres(data.genres)
         }).catch((err)=>{
             console.log(err)

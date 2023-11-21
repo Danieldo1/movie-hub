@@ -13,6 +13,9 @@ const config: Config = {
         'secondary': '#1b1c21',
         'textColor': '#646464',
       },
+      boxShadow: {
+        glow: '0 0 10px 5px rgba(255, 255, 255, 0.8)',
+      },
     },
   },
   plugins: [
