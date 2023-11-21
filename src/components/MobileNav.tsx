@@ -11,13 +11,18 @@ interface Props {
     handleSubmit: (e: React.FormEvent) => void
 }
 
+interface Genre {
+    id: string
+    name: string
+}
+
 const MobileNav = ({
     input,
     setInput,
     handleSubmit
 }: Props) => {
 const [isOpen, setIsOpen] = useState(false)
-const [genre, setGenre] = useState('')
+const [genre, setGenre] = useState([])
 const [selectedGenre, setSelectedGenre] = useState('')
 
 const searchParams = useSearchParams()
@@ -123,6 +128,22 @@ useEffect(() => {
 
 
 
+            </div>
+
+            <div className="flex flex-col gap-4 pt-4">
+                <p className='text-white ml-4 w-fit text-xl font-bold'>Genres</p>
+                {genre.map((item: Genre) => (
+                    <Link 
+                     href={`/genres/${item.id}?genre=${item.name.toLocaleLowerCase()}`} 
+                     key={item.id} 
+                     onClick={() => setIsOpen(false)}
+                     className='w-fit'
+                     >
+                        <p className={`text-textColor ml-4 cursor-pointer hover:text-white transition w-fit ${item.name.toLocaleLowerCase() === selectedGenre ? 'text-white' : '' }`}>
+                            {item.name}
+                        </p>
+                    </Link>
+                ))}
             </div>
         </div>
     </div>
