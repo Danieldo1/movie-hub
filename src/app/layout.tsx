@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Nav />
-        <div className='grid grid-cols-1 sm:grid-cols-[280px_1fr]'>
+        <div className='grid grid-cols-1 sm:grid-cols-[250px,1fr]'>
           <Sidebar />
         {children}
         </div>

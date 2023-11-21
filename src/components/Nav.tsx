@@ -17,7 +17,7 @@ const Nav = () => {
 
   return (
     <nav className="bg-primary">
-        <div className='flex justify-between items-center py-4 px-2 md:px-10'>
+        <div className='flex justify-between items-center py-2 md:py-4 px-2 md:px-10'>
             <Link className='hidden md:block' href='/discover/now_playing'>
                 <h2 className='text-3xl font-bold text-white'>MovieHub</h2>
             </Link>

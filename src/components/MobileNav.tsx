@@ -47,14 +47,14 @@ useEffect(() => {
 
   return (
     <>
-    <form className='md:hidden flex justify-between w-full'
+    <form className='md:hidden flex items-center justify-between w-full mb-5'
     onSubmit={handleSubmit}
     >
-        <div onClick={() => setIsOpen(true)}>
+
+        <div onClick={() => setIsOpen(true)} className='cursor-pointer ml-4'>
             <AiOutlineMenu size={30} />
         </div>      
-
-        <div className="space-x-4 mr-2">
+        <div className="space-x-4 mr-4">
             <input
             className='bg-secondary text-white px-4 p-2 outline-none placeholder:text-textColor rounded-lg'
             type="text" 
@@ -75,10 +75,10 @@ useEffect(() => {
     ${isOpen ? 'block' : 'hidden'}`}
   
     >
-        <div className='sticky top-0 bg-primary py-4 w-full '>
+        <div className='sticky top-0 bg-primary py-2 w-full '>
             <AiOutlineClose size={26} 
               onClick={() => setIsOpen(false)}
-              className='absolute top-0 right-0 m-2 mt-7 cursor-pointer'
+              className='absolute top-0 right-0 m-2 mt-10 cursor-pointer'
             />
             <Link
             className='w-fit'

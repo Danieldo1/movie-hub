@@ -9,6 +9,7 @@ interface Props {
     name: string
     release_date: string
     id: string
+    vote_average: number
 }
 
 const Card = ({
@@ -16,7 +17,9 @@ const Card = ({
     title,
     name,
     release_date,
-    id
+    id,
+    vote_average
+
 }: Props) => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
@@ -42,9 +45,12 @@ const Card = ({
                 onError={() => setError(true)}
                 />
                 </div>
-                <div className='absolute bottom-0  bg-primary px-4 py-2 text-center transition-all duration-500 opacity-0 group-hover:opacity-100'>
+                <div className='absolute top-0 w-full rounded-t-xl flex-1 flex justify-center items-center text-white  bg-primary px-4 py-2 text-center transition-all duration-500 opacity-0 group-hover:opacity-100'>
                     {title}
-                    <p>{release_date}</p>
+                 {vote_average}
+                </div>
+                <div className='absolute bottom-0 w-full rounded-b-xl flex-1 flex justify-center items-center text-white  bg-primary px-4 py-2 text-center transition-all duration-500 opacity-0 group-hover:opacity-100'>
+                {new Date(release_date).toLocaleDateString('en-GB')}
                 </div>
             </div>
         </Link>
