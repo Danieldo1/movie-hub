@@ -85,15 +85,16 @@ useEffect(() => {
             href={`/discover/now_playing`}
             onClick={() => setIsOpen(false)}
             >
-                <div className='font-semibold text-xl text-center'>
-                        MovieHub
+                <div className='font-semibold text-2xl text-center'>
+                        Movie
+                <span className='text-2xl font-bold text-black bg-[#ead61c] rounded-lg px-1'>Hub</span>
                 </div>
             </Link>
         </div>
 
         <div className='px-4 pb-16'>
             <div className="flex flex-col gap-4 pt-4">
-                <p className='text-white ml-4 w-fit text-xl font-bold'>Discover</p>
+                <p className='text-[#ead61c] ml-4 w-fit text-xl font-bold '>Discover</p>
                 <Link className='w-fit' href='/discover/now_playing'
                     onClick={() => setIsOpen(false)}
                 >
@@ -131,7 +132,7 @@ useEffect(() => {
             </div>
 
             <div className="flex flex-col gap-4 pt-4">
-                <p className='text-white ml-4 w-fit text-xl font-bold'>Genres</p>
+                <p className='text-[#ead61c] ml-4 w-fit text-xl font-bold'>Genres</p>
                 {genre.map((item: Genre) => (
                     <Link 
                      href={`/genres/${item.id}?genre=${item.name.toLocaleLowerCase()}`} 

@@ -9,6 +9,7 @@ import {BsPlayFill} from 'react-icons/bs'
 import dynamic from 'next/dynamic'
 import { BASE_IMAGE_URL, BASE_URL } from '@/utils/routes'
 import Genres from '@/components/Genres'
+import { GoChevronLeft } from 'react-icons/go'
 
 
 const ReactPlayer = dynamic(() => import('react-player/lazy'))
@@ -128,14 +129,14 @@ const Movie = () => {
     {movie === null && <Loading />}
     
     <div 
-    className='text-textColor hover:text-white absolute right-0 top-0 m-2 cursor-pointer'
+    className='  text-textColor hover:text-white absolute left-0 top-0 m-1  cursor-pointer'
     onClick={()=>router.back()}
     >
-        <IoMdClose size={20} />
+        <GoChevronLeft size={34} />
     </div>
 
     <div className='flex justify-center pt-4 md:pt-0 '>
-        <div className='grid md:grid-cols-[300px,1fr]  max-w-[1280px] gap-12 '>
+        <div className='grid lg:grid-cols-[300px,1fr]  max-w-[1280px] gap-12 '>
             <div className='w-full flex justify-center relative'>
                 <img 
                 src={`${BASE_IMAGE_URL}${movie?.poster_path}`}
@@ -162,16 +163,16 @@ const Movie = () => {
                 </div>
 
                 <div className='flex flex-col md:flex-row gap-2 md:gap-6'>
-                    <div>Language: {movie?.original_language?.toLocaleUpperCase()}</div>
-                    <div>Release Date: {movie?.release_date}</div>
-                    <div>Runtime: {movie?.runtime} min</div>
-                    <div>Status: {movie?.status}</div>
-                    <div>Rating: {movie?.vote_average} / 10</div>
+                    <div className='text-[#a8a8a8]'><span className='text-white'>Language:</span> {movie?.original_language?.toLocaleUpperCase()}</div>
+                    <div className='text-[#a8a8a8]'><span className='text-white'>Release:</span> {movie?.release_date && new Date(movie.release_date).toLocaleDateString('en-GB')}</div>
+                    <div className='text-[#a8a8a8]'><span className='text-white'>Duration:</span> {movie?.runtime} min</div>
+                    <div className='text-[#a8a8a8]'><span className='text-white'>Status:</span> {movie?.status}</div>
+                    <div className='text-[#a8a8a8]'><span className='text-white'>Rating:</span> {movie?.vote_average.toFixed(1)}<span className='text-yellow-500 ml-2'>★</span></div>
                 </div>
 
-                <div className='pt-14 space-y-2 pr-4'>
-                    <div>Storyline</div>
-                    <div>{movie?.overview}</div>
+                <div className='pt-10 space-y-2 pr-4'>
+                    <div className='text-xl text-white'>Storyline</div>
+                    <div className='text-[#a8a8a8]'>{movie?.overview}</div>
                 </div>
 
                 <div className='inline-block pt-6 cursor-pointer'

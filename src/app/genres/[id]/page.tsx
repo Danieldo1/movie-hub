@@ -74,25 +74,35 @@ const changePage = (btn: string) => {
                 title={movie.title}
                 name={movie.name}
                 release_date={movie.release_date}
+                vote_average={movie.vote_average}
                 />
             ))}
         </div>
-        <div className='flex justify-center mt-8 py-6 pt-16'>
-              <button
-              onClick={()=>changePage("prev")}
-              className="mr-5 h-fit border-none bg-none outline-none text-black text-6xl cursor-pointer font-light opacity-50 transition-opacity duration-100 ease-in text-shadow-black hover:opacity-100 hover:text-shadow-white hover:transform hover:scale-125">
-                <p className="text-white font-light opacity-50 transition-opacity duration-100 ease-in text-shadow-black hover:opacity-100 hover:text-shadow-white">
-                  {'<'}
-                </p>
-              </button>
-              <button
-              onClick={()=>changePage("next")}
-              className="ml-5 h-fit border-none bg-none outline-none text-black text-6xl cursor-pointer font-light opacity-50 transition-opacity duration-100 ease-in text-shadow-black hover:opacity-100 hover:text-shadow-white hover:transform hover:scale-125">
-                <p className="text-white font-light opacity-50 transition-opacity duration-100 ease-in text-shadow-black hover:opacity-100 hover:text-shadow-white">
-                  {'>'}
-                </p>
-              </button>
-            </div>
+        {movies.length > 0 && (
+       <div className='flex justify-center mt-8 py-6 pt-16'>
+       <button
+         onClick={()=>changePage("prev")}
+         className="mr-5 h-fit border-none bg-none outline-none text-black text-6xl cursor-pointer font-light opacity-50 transition-opacity duration-100 ease-in text-shadow-black hover:opacity-100 hover:text-shadow-white hover:transform hover:scale-105"
+       >
+         <p className="text-[#ead61c] font-light opacity-50 transition-opacity duration-100 ease-in text-shadow-black hover:opacity-100 hover:text-shadow-white">
+           {'<'}
+         </p>
+       </button>
+
+       <button onClick={() => changePage("prev")} className="text-[#ead61c] opacity-50 text-3xl mt-1 mr-2">{currentPage-1}</button>
+       <p className="text-[#ead61c] text-5xl mt-2">{currentPage}</p>
+       <button onClick={() => changePage("next")} className="text-[#ead61c] opacity-50 text-3xl mt-1 ml-2">{currentPage + 1}</button>
+
+       <button
+         onClick={()=>changePage("next")}
+         className="ml-5 h-fit border-none bg-none outline-none text-black text-6xl cursor-pointer font-light opacity-50 transition-opacity duration-100 ease-in text-shadow-black hover:opacity-100 hover:text-shadow-white hover:transform hover:scale-125"
+       >
+         <p className="text-[#ead61c] font-light opacity-50 transition-opacity duration-100 ease-in text-shadow-black hover:opacity-100 hover:text-shadow-white">
+           {'>'}
+         </p>
+       </button>
+     </div>
+)}
     </main>
   )
 }

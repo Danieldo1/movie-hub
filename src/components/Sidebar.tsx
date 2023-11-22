@@ -38,7 +38,7 @@ const Sidebar = () => {
   return (
     <div className='bg-primary px-10 max-h-[calc(100vh-72px)] overflow-y-scroll pb-6 scrollbar-hide  w-2/3 hidden sm:block '>
         <div className="flex flex-col gap-4 pt-4">
-            <p className='text-2xl font-bold'> Discover</p>
+            <p className='text-2xl font-bold text-[#ead61c]'> Discover</p>
         </div>
         <Link className='w-fit py-4' href='/discover/now_playing'>
                     <p className={`text-textColor py-2 mt-2 ml-4 cursor-pointer hover:text-white transition w-fit ${selectedGenre === 'now_playing' ? 'text-white' : '' }`}>
@@ -65,7 +65,7 @@ const Sidebar = () => {
         </Link>
 
         <div className="flex flex-col gap-4 pt-4">
-            <p className='text-2xl font-bold'> Genres</p>
+            <p className='text-2xl font-bold text-[#ead61c]'> Genres</p>
             {genres.map((item: Genres) => (
                 <Link 
                 href={`/genres/${item.id}?genre=${item.name.toLowerCase()}`} 
