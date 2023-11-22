@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [MovieHub 🔗](https://moviehub-io.vercel.app/discover/now_playing)
 
-## Getting Started
+![Landing page](./public/moviehub.png)
 
-First, run the development server:
+MovieHub is a responsive movie information website built with Next.js 14, styled using Tailwind CSS. It leverages the TMDB API to fetch movie genres and details, providing users with an immersive experience to explore and learn about their favorite movies.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Technologies Used
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-   **Next.js 14**: The project is built on the latest version of Next.js, a React framework that enables server-side rendering and efficient client-side navigation.
+    
+-   **Tailwind CSS**: Tailwind is used for styling, ensuring a responsive and visually appealing design across various screen sizes, from mobile to desktop.
+    
+-   **TMDB API**: The project integrates with The Movie Database (TMDB) API to dynamically fetch information about movie genres and details.
+    
+-   **React Router Navigation**: Next.js router is used for seamless navigation between pages. Individual movie details are displayed dynamically using Next.js router functionality.
+    
+-   **Pagination with React Refs**: The website incorporates smooth scrolling pagination, allowing users to navigate between pages effortlessly. React refs are used to manage and control the scrolling behavior.
+    
+-   **Search Functionality**: MovieHub features a search bar that utilizes the TMDB API to allow users to search for any movie in the database.
+    
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 1. Genre Selection
 
-## Learn More
+Users can choose from various movie genres, with the website dynamically fetching and displaying movies based on the selected genre.
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Movie Details
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Clicking on an individual movie image reveals detailed information about the movie, including an overview, language, production date, and breadcrumbs indicating the genre of the movie. This is achieved through Next.js router navigation.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 3. Responsive Design
 
-## Deploy on Vercel
+Tailwind CSS ensures that the website is responsive and provides an optimal viewing experience on both mobile and desktop screens.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 4. Pagination
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The main screen incorporates smooth scrolling pagination, allowing users to navigate through multiple pages of movie listings.
+
+### 5. Search Bar
+
+A search bar is provided, enabling users to search for any movie in the TMDB database, enhancing the user's ability to discover specific movies.
+
+## How to Run Locally
+
+1.  Clone the repository:
+    
+    bashCopy code
+    
+    `git clone https://github.com/your-username/MovieHub.git` 
+    
+2.  Install dependencies:
+    
+    bashCopy code
+    
+    `cd MovieHub
+    npm install` 
+    
+3.  Run the development server:
+    
+    bashCopy code
+    
+    `npm run dev` 
+    
+4.  Open your browser and navigate to `http://localhost:3000` to explore MovieHub.
+    
+  ## [Visit Live Demo](https://moviehub-io.vercel.app/discover/now_playing)
+
+Feel free to contribute, report issues, or provide feedback!
